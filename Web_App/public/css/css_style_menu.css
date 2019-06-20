@@ -1,0 +1,32 @@
+ul#menu, ul#menu ul { list-style-type: none; margin: 0; padding: 0; width: 100%; }
+
+    ul#menu a { display: block; text-decoration: none; }
+
+    ul#menu li { margin-top: 1px; text-align: left; padding: 0px; background: url( '../img/bg_menuitem.jpg' ); margin-bottom: 5px; }
+        ul#menu li.no-child { background-image: url(../img/bg_menuitem_nochild.jpg); }
+            ul#menu li.no-child.selected { background-image: url(../img/bg_menuitem_nochild_hover.jpg); }
+
+        ul#menu li a { color: #606060; height: 36px; outline: none; font-family: Arial; line-height: 36px; padding: 0 25px 0 15px; font-size: 14px; }
+
+            ul#menu li a:hover, ul#menu > li > a.selected { background: url( '../img/bg_menuitem_hover.jpg' ) no-repeat; color: #fff; }
+
+        ul#menu li ul { background: #fff url( '../img/bg_submenu.png' ) repeat-x; color: #c92538; }
+
+            ul#menu li ul li { background: none; border: none; }
+
+                ul#menu li ul li.no-child ,ul#menu li ul li.no-child a, ul#menu li ul li.no-child a:hover,ul#menu li ul li.no-child a.selected, ul#menu li ul li.no-child.selected a { background-image: none; }
+
+                ul#menu li ul li a { font-family: Arial; border: none; color: #000; border-bottom: 1px dotted #b5b5b5; font-size: 13px; height: auto; line-height: 20px; padding: 5px 0px 5px 30px; background: url( '../img/icon/collapsed.jpg' ) no-repeat 12px 9px; }
+                ul#menu li ul li.node-3 a { font-size: 12px; background-image: none; padding: 5px 0px 5px 34px; }
+                    ul#menu li ul li.node-3 a:hover { background-image: none; }
+                    ul#menu li ul li.node-3 a.selected { color: #0071bb }
+                ul#menu li ul li a:hover, ul#menu > li > ul > li > a.selected { color: #0071bb; background: url( '../img/icon/collapsed.jpg' ) no-repeat 12px 9px;}
+                ul#menu > li > ul > li > a.selected { background: url( '../img/icon/expanded.jpg' ) no-repeat 12px 9px; }
+    
+
+.code { border: 1px solid #ccc; list-style-type: decimal-leading-zero; padding: 5px; margin: 0; }
+    .code code { display: block; padding: 3px; margin-bottom: 0; }
+    .code li { background: #ddd; border: 1px solid #ccc; margin: 0 0 2px 2.2em; }
+.indent1 { padding-left: 1em; }
+
+.indent2 { padding-left: 2em; }

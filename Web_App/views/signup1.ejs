@@ -1,0 +1,86 @@
+<html lang="en">
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Sign-up: Step 1/2</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Font Icon -->
+        <link rel="stylesheet" href="/css/signup/fonts/material-icon/css/material-design-iconic-font.min.css">
+
+        <!-- Main css -->
+        <link rel="stylesheet" href="/css/signup/css/style.css">
+        <link href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAatP4AreT/AACu/gD///8AAK/+AE/D/gCh3v4AS8b+AO/6/wDQ7v8AHLP+AAAAAAAAAAAAAAAAAAAAAAAAAAAAMzMyREQjMzMzMkQTMUQjMzNEM5NjM0QzMkMzQ0MzNCM0M6RERAMzQyQzNERERDNCQTM3QzNEMxRDMzdIhUIzNEMzN0M0QzM0QTM3QzNDMxQkMzREREMzQjQzREREMzNDMkMzQ0MzNCMzRDOTYzNEMzMyRBMxRCMzMzMyREQjMzMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" rel="icon" type="image/x-icon" />
+        <script>
+            function validate(){
+                const c = document.forms["myform"]["ID"].value;
+                const a = document.forms["myform"]["pass"].value;
+                const b = document.forms["myform"]["repass"].value;
+                const idregex = /^(?=.*[a-z])[a-z0-9]{8,20}$/i;
+                const passregex = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!*?&])[A-Za-z\d@$!*?&]{8,}$/;
+                if(!idregex.test(c)){
+                    alert("Invalid userID, please try again!");
+                    return false;
+                }
+                else{
+                    if(a!=b){
+                        alert("Passwords don't match!");
+                        return false;
+                    }
+                    else{
+                        if(!passregex.test(a)){
+                            alert("Invalid password, please try again!");
+                            return false;
+                        }
+                    } 
+                }
+            } 
+        </script>
+    </head>
+    <body>
+        <div class="main">
+            <section class="signup">
+                <!-- <img src="images/signup-bg.jpg" alt=""> -->
+                <div class="container">
+                    <div class="signup-content">
+                        <form method="post" class="signup-form" action="/signup" name="myform" onsubmit="return validate()">
+                            <h2 class="form-title">Create account (Step 1/2)</h2>
+                            <input type="hidden" name="_csrf" value="<%= data.csrfToken %>">
+                            <div class="form-group">
+                                <input type="text" name="ID" class="form-input" placeholder= "Case-Insensitive Username *" required />
+                            
+                            User ID must meet the requirements:<br>- Minimum length of 8 alphanumeric characters.<br>- No special symbol.<br>- Contains at least 1 letter.
+                            </div>
+                            <div class="form-group">
+                                <input type="password" name="pass" id="pass" class="form-input" placeholder= "Case-Sensitive Password *" required autocomplete="off"/>
+                                <span toggle="#pass" class="zmdi zmdi-eye-off field-icon toggle-password"></span>
+                            Password must meet the requirements:<br>- Minimum length of 8 characters.<br>- Contains at least 1 Uppercase letter.<br>- Contains at least 1 number.<br>- Contains at least 1 special symbol (@$!*?&).
+                            </div>
+                            <div class="form-group">
+                                <input type="password" name="repass" class="form-input" placeholder="Re-enter Password *" required autocomplete="off" />
+                            </div>
+                            <div class="form-group">
+                                <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+                                <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="form-submit">Sign-up</button>
+                            </div>                       
+                        </form>
+                        <p class="loginhere">
+                            Already have account? <a href="/login" class="loginhere-link">Login here</a>
+                        </p>
+                        <br><div align="center">
+                            <% if(data.hasOwnProperty('error')){ %>
+                                <h4>Error: <%= data.error %></h4> 
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+         <!-- JS -->
+        <script src="/css/signup/vendor/jquery/jquery.min.js"></script>
+        <script src="/css/signup/js/main.js"></script>
+    </body>
+</html>

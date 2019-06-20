@@ -1,0 +1,39 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Check Your Lightning Request Status</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAatP4AreT/AACu/gD///8AAK/+AE/D/gCh3v4AS8b+AO/6/wDQ7v8AHLP+AAAAAAAAAAAAAAAAAAAAAAAAAAAAMzMyREQjMzMzMkQTMUQjMzNEM5NjM0QzMkMzQ0MzNCM0M6RERAMzQyQzNERERDNCQTM3QzNEMxRDMzdIhUIzNEMzN0M0QzM0QTM3QzNDMxQkMzREREMzQjQzREREMzNDMkMzQ0MzNCMzRDOTYzNEMzMyRBMxRCMzMzMyREQjMzMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" rel="icon" type="image/x-icon" />
+    </head>
+    <body>
+        <div class="container">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    Check Your Lightning Bitcoin Status
+                </div>
+                <div class="panel-body">
+                    <a href="/home">
+                        <button>Homepage</button>
+                    </a>
+                    <div align="right">
+                        Welcome, <%= data %>! 
+                        <a href="/logout">
+                            <img src="../img/icon/logout_web.png" alt=""> Logout
+                        </a>
+                    </div>
+                    <form name="myForm" method="post">
+                        <div class="form-group">
+                            <label class="col-md-4">Enter YOUR Request</label>
+                            <input type="text" name="ln_req" class="form-control" placeholder= "Lightning Request *" required />
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Check</button>
+                        </div>
+                    </form> 
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

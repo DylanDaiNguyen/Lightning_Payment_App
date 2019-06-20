@@ -1,0 +1,35 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Merchant Login</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAatP4AreT/AACu/gD///8AAK/+AE/D/gCh3v4AS8b+AO/6/wDQ7v8AHLP+AAAAAAAAAAAAAAAAAAAAAAAAAAAAMzMyREQjMzMzMkQTMUQjMzNEM5NjM0QzMkMzQ0MzNCM0M6RERAMzQyQzNERERDNCQTM3QzNEMxRDMzdIhUIzNEMzN0M0QzM0QTM3QzNDMxQkMzREREMzQjQzREREMzNDMkMzQ0MzNCMzRDOTYzNEMzMyRBMxRCMzMzMyREQjMzMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" rel="icon" type="image/x-icon" />
+    </head>
+    <body>
+        <div class="container">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <br><h1 align="center">Merchant Login</h1>
+                </div>
+                <div class="panel-body">
+                    <form method="post" action="/merlogin">
+                        <div class="form-group">
+                            <label class="col-md-4">Enter your ID</label>
+                            <input type="text" name="ID" class="form-control" placeholder= "Username *" required />
+                        </div>
+                        <div class="form-group">
+                            <label class= "col-md-4">Enter Your Passphrase</label>
+                            <input type="password" name="pass" class="form-control" placeholder="Password *" required autocomplete="off" />
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Login</button>
+                        </div>
+						<br>Don't have account? <a href="signup"> Click here</a> to register.
+                    </form>      
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
